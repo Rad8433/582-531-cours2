@@ -14,12 +14,7 @@ void loop() {
   Serial.print(maLectureAngle);
   Serial.println();
   delay(100);
-
-  if (maLectureAngle > 2047){
-    monPixel = CRGB(0,222,255);
+  int lumiere = (maLectureAngle*255) /4095;
+    monPixel = CRGB(0,lumiere,0);
     FastLED.show();
-  } else{
-    monPixel = CRGB(0,0,0);
-    FastLED.show();
-  }
 }
